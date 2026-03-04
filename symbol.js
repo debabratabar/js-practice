@@ -27,3 +27,23 @@ for ( let key in obj5){
 
 
 console.log(obj5.hasOwnProperty(obj3))
+
+
+
+let obj6 ={
+    name : 'debabrata' ,
+    age : 26 ,
+    [Symbol.toPrimitive](hint){
+            if( hint === 'string'){
+                return this.name
+            }
+            return this.age
+    } 
+}
+
+
+
+console.log(String(obj6));
+console.log(Number(obj6));
+
+
