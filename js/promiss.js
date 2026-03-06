@@ -1,25 +1,36 @@
-// const promise1 = new Promise((res , rej)=>{
-//     setTimeout(()=>{
-//             console.log("i am in a promise");
-//             res('promise resolved')
-//             rej('promise rejected')
-//     } , 2000)
-// }) 
+console.log("promise learning start 1");
+
+const promise1 = new Promise((res , rej)=>{
+console.log("promise inside and before res")
+    setTimeout(()=>{
+            console.log("i am in a promise");
+            res('promise resolved')
+            rej('promise rejected')
+    } , 2000)
+
+console.log("promise inside and after res")
+
+}) 
+
+console.log("promise learning start 2");
 
 
 
-// promise1
-//     .then((data) => { console.log('first-then'); return data
-//     })
-//     .then(console.log)
-//     .catch(console.log)
+promise1
+    .then((data) => { console.log('first-then'); return data
+    })
+    .then(console.log)
+    .catch(console.log)
 
-// console.log(promise1);
-// console.log(typeof promise1);
+console.log(promise1);
+console.log(typeof promise1);
 // setTimeout(()=>{
 //     console.log(promise1);
     
 // },2000)
+
+console.log("promise learning start 3");
+
 
 
 const bookTrain = () => {
@@ -35,29 +46,28 @@ const planSightseeing = () =>{
     return  new Promise((resolve, reject) => {   setTimeout( () => { resolve("Trip planned")} ,2000 ) })
 }
 
-bookTrain().then( (data) => {
-    console.log(data);
-    return bookHotel();
-  })
-  .then((data) => {
-    console.log(data)
-    return bookCab()
-  })
-  .then((data) => {
-    console.log(data)
-     return planSightseeing()
-  })
-  .then((data) => {
-    console.log(data)
-    console.log("Trip planned 🎉");
-  })
-  .catch(() => {
-    console.log("Something went wrong ❌");
-  });
+// bookTrain().then( (data) => {
+//     console.log(data);
+//     return bookHotel();
+//   })
+//   .then((data) => {
+//     console.log(data)
+//     return bookCab()
+//   })
+//   .then((data) => {
+//     console.log(data)
+//      return planSightseeing()
+//   })
+//   .then((data) => {
+//     console.log(data)
+//     console.log("Trip planned 🎉");
+//   })
+//   .catch(() => {
+//     console.log("Something went wrong ❌");
+//   });
 
 
 
-Promise.allSettled\
 
 
 
