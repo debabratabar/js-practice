@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }  
+        
+    </style>
+</head>
+<body>
+   
+    <div><h2>Todo App</h2></div>
+    <div > <input type="text" name="" id="todo-text" placeholder="Enter your pending work Here">
+    <button id ='addButton'>Add </button></div>
+    
+    <p id="warning-para" style="color: red;">Please Add item into your todo app</p>
+    <ul id="todolist">
+
+    </ul>
+    
+   
+    
+</body>
+<script>
+
+
+
+    const addButtonRef= document.getElementById('addButton')
+    const inpTodoRef= document.getElementById('todo-text')
+    const todolistRef= document.getElementById('todolist')
+    const WarningRef= document.getElementById('warning-para')
+
+
+    function statCheck(){
+        
+        if(inpTodoRef.value.trim() == ''){
+                WarningRef.style.color='red'
+                WarningRef.textContent='please add new-item'
+                return false
+        }
+        else{
+            WarningRef.style.color='green'
+            WarningRef.textContent=`Total items : ${todolistRef.children.length+1}`
+        }
+        return true
+    }
+    
+    const addButtonRefListner  = function(){
+
+        if ( !statCheck()){
+            return
+        }
+
+        let contnt = inpTodoRef.value.trim() ; 
+        const liItem = document.createElement('li')
+        liItem.textContent =inpTodoRef.value.trim()
+        liItem.addEventListener('click' , function(){
+            liItem.remove()
+            liItem = null 
+            WarningRef.textContent=`Total items : ${todolistRef.children.length}`
+            
+        })
+        todolistRef.appendChild(liItem)
+        console.log("button CLickd");
+        inpTodoRef.value=''
+    }
+
+
+    addButtonRef.addEventListener('click' ,addButtonRefListner)
+
+</script>
+</html>
